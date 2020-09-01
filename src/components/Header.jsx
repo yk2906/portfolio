@@ -1,5 +1,4 @@
 import React from 'react';
-// import HeaderPic from '../assets/img/C01011-001H.jpg';
 import '../assets/styles/style.css';
 
 

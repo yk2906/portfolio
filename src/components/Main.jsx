@@ -5,7 +5,7 @@ import Form from '../components/Forms/Form';
 
 const Main = () => {
     return(
-        <div>
+        <div className='container'>
             <h1>プロフィール</h1>
             <p>氏名　小浜佑斗</p>
             <p>生年月日　1997年5月6日</p>

@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
+// import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Text from './Text';
 
@@ -20,7 +20,7 @@ export default function Form() {
   
     return (
       <div className='form'>
-        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+        <Button variant="contained" color="primary" onClick={handleClickOpen}>
           入力フォーム
         </Button>
         <Dialog
@@ -32,7 +32,7 @@ export default function Form() {
           <DialogTitle id="alert-dialog-title">お問い合わせフォーム</DialogTitle>
           <DialogContent>
               <Text 
-                label={'名前'} 
+                label={'お名前'} 
                 multiline={false} 
                 rows={1}
                 // value={name} 
