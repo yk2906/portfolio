@@ -30,7 +30,8 @@
     margin: auto;
     font-weight: 500;
     letter-spacing: 8px;
-    animation: fadeIn 0.9s ease 1s 1 normal;
+    opacity: 0;
+    animation: fadeIn 0.9s ease 1s 1 forwards;
 }
 
 @keyframes fadeIn {
@@ -69,18 +70,37 @@
 /* コンテイナースタイル */
 .container {
     font-size: 30px;
-    text-align: center;
+    height: 500px;
 }
 
+.profile {
+    font-size: 25px;
+}
 
+.career {
+    font-size: 25px;
+}
+
+.skills {
+    font-size: 25px;
+}
+
+.hobby {
+    font-size: 25px;
+}
+
+.aim {
+    font-size: 25px;
+}
 
 .form {
-    padding: 20px 10px 50px 10px;
+    padding-bottom: 50px;
+    font-size: 25px;
 }
 
 .form button {
     padding: 10px 20px 10px 20px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
@@ -221,30 +241,7 @@ body{
 
 /* フッタースタイル */
 .footer {
-    background-color: rgb(20, 19, 19);
-    opacity: 0.7;
-    display: flex;
-}
-
-.footer ul {
-    color: white;
-    list-style: none;
-    margin: 5px 5px 5px auto;
-}
-
-.footer li {
-    margin: 10px;
-    cursor: pointer;
-    user-select: none;
-}
-
-.footer li:hover {
-    opacity: 0.5;
-    transition: all 0.3s ease 0s;
-}
-
-.footer-logo {
-    color: white;
-    font-size: 25px;
-    margin: 20px auto 20px 20px;
+    background-color: lavenderblush;
+    /* display: flex; */
+    height: 1000px;
 }
