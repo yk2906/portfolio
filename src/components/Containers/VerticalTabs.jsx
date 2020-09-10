@@ -9,7 +9,7 @@ import Skills from './Skills';
 import Profile from './Profile';
 import Hobby from './Hobby';
 import Aim from './Aim';
-import Form from '../Forms/Form';
+// import Form from '../Forms/Form';
 import Career from './Career';
 
 function TabPanel(props) {
@@ -50,8 +50,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
-    height: 336,
+    height: 234,
     padding: 50,
+    minWidth: 1000,
+    backgroundColor: 'lemonchiffon'
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -70,40 +72,38 @@ export default function VerticalTabs() {
     <div className={classes.root}>
       <Tabs
         orientation="vertical"
-        variant="scrollable"
+        variant="fullwidth"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
         className={classes.tabs}
+
+        // elementType='div'
       >
         <Tab label="プロフィール" {...a11yProps(0)} />
         <Tab label="略歴" {...a11yProps(1)} />
         <Tab label="スキル・資格" {...a11yProps(2)} />
         <Tab label="趣味" {...a11yProps(3)} />
         <Tab label="目標" {...a11yProps(4)} />
-        <Tab label="お問い合わせ" {...a11yProps(5)} />
+        {/* <Tab label="お問い合わせ" {...a11yProps(5)} /> */}
         {/* <Tab label="Item Seven" {...a11yProps(6)} /> */}
       </Tabs>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} style={{margin:'0 auto'}}>
         <Profile />
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} style={{margin:'0 auto'}}>
         <Career />
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} style={{margin:'0 auto'}}>
         <Skills />
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={3} style={{margin:'0 auto'}}>
         <Hobby />
       </TabPanel>
-      <TabPanel value={value} index={4}>
+      <TabPanel value={value} index={4} style={{margin:'0 auto',wordWrap:'breakWord' }}>
         <Aim />
       </TabPanel>
-        <TabPanel value={value} index={5}>
-        <div className='form'>
-          <h1>お問い合わせ</h1>
-        </div>
-        <Form />
+      <TabPanel value={value} index={5} style={{margin:'0 auto'}}>
       </TabPanel>
       {/* <TabPanel value={value} index={6}>
         Item Seven

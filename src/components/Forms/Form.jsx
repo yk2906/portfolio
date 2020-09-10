@@ -19,8 +19,8 @@ export default function Form() {
     };
   
     return (
-      <div className='form'>
-        <Button variant="contained" color="primary" onClick={handleClickOpen}>
+      <div>
+        <Button variant="contained" color="primary" onClick={handleClickOpen} style={{fontSize:25}}>
           入力フォーム
         </Button>
         <Dialog

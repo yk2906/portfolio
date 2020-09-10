@@ -71,6 +71,8 @@
 .container {
     font-size: 30px;
     height: 500px;
+    display: flex;
+    background-color: lemonchiffon;
 }
 
 .profile {
@@ -93,14 +95,24 @@
     font-size: 25px;
 }
 
-.form {
-    padding-bottom: 50px;
-    font-size: 25px;
+.form-area {
+    height: 50vh;
+    background-color: lemonchiffon;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.form button {
-    padding: 10px 20px 10px 20px;
-    font-size: 20px;
+.form-title {
+    align-self: center;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    height: 10px;
+}
+
+.form-button {
+    align-self: center;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
