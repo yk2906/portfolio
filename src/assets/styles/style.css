@@ -1,4 +1,8 @@
 /* ヘッダースタイル */
+.html {
+    width: 100%;
+}
+
 .header {
     color: white;
     background-image: url("../img/C01011-001H.jpg");

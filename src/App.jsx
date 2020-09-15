@@ -10,7 +10,7 @@ import Divider from '@material-ui/core/Divider';
 
 const App = () => {
   return (
-    <div>
+    <div className="html">
       <Header />
       <Container />
       <Divider />

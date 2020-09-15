@@ -9,7 +9,6 @@ import Skills from './Skills';
 import Profile from './Profile';
 import Hobby from './Hobby';
 import Aim from './Aim';
-// import Form from '../Forms/Form';
 import Career from './Career';
 
 function TabPanel(props) {
