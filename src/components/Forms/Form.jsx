@@ -44,11 +44,12 @@ export default function Form() {
           + '本文: ' + content
       }
 
-      fetch('https://hooks.slack.com/services/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', {
-        method: 'POST',
-        body: JSON.stringify(payload)
-      }).then(() => {
-        alert('お問い合わせ内容を送信しました。')
+      axios({
+        method : 'GET',
+        url : 'http://localhost:3000/',
+        data : payload
+      }).then(response => {
+        console.log('送信が完了しました。')
         setName("")
         setEmail("")
         setContent("")
