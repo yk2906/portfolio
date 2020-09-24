@@ -50,6 +50,7 @@ export default function Form() {
         data : payload
       }).then(response => {
         console.log('送信が完了しました。')
+        console.log('ステータスコード ' + response.status)
         setName("")
         setEmail("")
         setContent("")
