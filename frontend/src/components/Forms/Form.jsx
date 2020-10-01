@@ -43,18 +43,23 @@ export default function Form() {
       //         email + '\n'
       //         content
       // }
-
-      axios.get("/api").then(response => {
+      axios.get("https://jsonplaceholder.typicode.com/users").then(response => {
         console.log(response.data)
-        // setName("")
-        // setEmail("")
-        // setContent("")
-        // return handleClose()
         
       })
+      .catch(error => {
+        console.log(error);
+      })
+      .finally(() => {
+
+      })
     }
-
-
+    
+    // setName("")
+    // setEmail("")
+    // setContent("")
+    // return handleClose()
+    
     return (
       <div>
         <Button variant="contained" color="primary" onClick={handleClickOpen} style={{fontSize:25}}>

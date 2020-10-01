@@ -24,11 +24,11 @@ const app = express();
 //     }
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 4000;
 
 
-app.get('/api', (req, res) => {
-    res.json({
+app.get("/api", (req, res) => {
+    res.json((req, res){
         name: "test",
         email: "test@gmail.com",
         content: "test content"
