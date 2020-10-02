@@ -27,8 +27,8 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 4000;
 
 
-app.get("/api", (req, res) => {
-    res.json((req, res){
+app.get("/api/", (req, res) => {
+    res.json({
         name: "test",
         email: "test@gmail.com",
         content: "test content"
