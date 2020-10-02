@@ -43,7 +43,7 @@ export default function Form() {
       //         email + '\n'
       //         content
       // }
-      axios.get("https://jsonplaceholder.typicode.com/users").then(response => {
+      axios.get("/api/").then(response => {
         console.log(response.data)
         
       })
