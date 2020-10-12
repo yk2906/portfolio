@@ -1,5 +1,6 @@
 import React from 'react';
-import Form from '../Forms/Form';
+// import Form from '../Forms/Form';
+import ChatForm from '../Forms/ChatForm';
 
 const FormArea = () => {
     return(
@@ -8,7 +9,7 @@ const FormArea = () => {
             <h1>お問い合わせ</h1>
         </div>
         <div className='form-button'>
-            <Form />
+            <ChatForm />
         </div>
     </div>
     )
