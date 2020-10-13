@@ -23,13 +23,15 @@ export default function AlignItemsList(props) {
   const classes = useStyles();
 
   return (
-    <List className={classes.root}>
+    <List className={classes.root} >
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
         </ListItemAvatar>
         <ListItemText
           // secondary="Brunch this weekend?"
+          // name={props.name}
+          // name={props.message}
           primary={
             <React.Fragment>
               <Typography

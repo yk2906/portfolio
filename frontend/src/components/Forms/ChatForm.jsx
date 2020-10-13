@@ -5,7 +5,7 @@ import Dialog from '@material-ui/core/Dialog';
 // import ListItemText from '@material-ui/core/ListItemText';
 // import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
-// import Divider from '@material-ui/core/Divider';
+import Divider from '@material-ui/core/Divider';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -19,6 +19,9 @@ import socketio from 'socket.io-client'
 import { useState } from 'react';
 // import { useCallback } from 'react';
 import { useEffect } from 'react';
+import '../../assets/styles/chatform.css'
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
 
 const socket = socketio.connect('http://localhost:4000')
 socket.on('connection', () => {
@@ -53,25 +56,24 @@ export default function ChatForm(props) {
 
   const onTextChange = e => {
     setState({...state, [e.target.name]: e.target.value})
-    console.log('hello world')
+    console.log(e.target.value)
   }
 
   const onMessageSubmit = e => {
     e.preventDefault()
     const {name, message} = state
     socket.emit('message', {name, message})
-    setState({message: '', name})
+    setState({name, message: ""})
   }
 
-  // const renderChat = () => {
-  //   return chat.map(({chatMessage}, index) => {
-  //     <div key={index}>
-  //       <h2>
-  //         {chatMessage}
-  //       </h2>
-  //     </div>
-  //   })
-  // }
+  const renderChat = () => {
+    return chat.map(({name, message}, index) => (
+      <div key={index} className={"inside-chatform"}>
+          <div className={"name-box"}>{name}</div>
+          <div className={"chatbox"}>{message}</div>
+      </div>
+    ))
+  }
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -83,6 +85,13 @@ export default function ChatForm(props) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    const scrollArea = document.getElementById('scroll-area');
+    if (scrollArea) {
+      scrollArea.scrollTop = scrollArea.scrollHeight;
+    }
+  });
 
   return (
     <div>
@@ -101,24 +110,33 @@ export default function ChatForm(props) {
           </Toolbar>
         </AppBar>
         <List>
-          {chat.map(({message, name}, index) => {
-            return <AlignItemList value={state.name, state.message}  key={index.toString()} />
-          })}
+          {/* {chat.map(({name, message}, index) => {
+            return <AlignItemList key={index.toString()} />
+          })} */}
+          <div className="render-chat" id={"scroll-area"}>
+            {renderChat()}
+            {/* <ListItemAvatar> */}
+              {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" /> */}
+            {/* </ListItemAvatar> */}
+          </div>
         </List>
-        <SendButton onClick={onMessageSubmit} />
-        <InputForm
-          name={"message"}
-          label="名前"
-          value={state.name}
-          onTextChange={e => onTextChange(e)}
-           />
-        <InputForm
-          name={"name"}
-          label="メッセージ内容" 
-          value={state.message}
-          onTextChange={e => onTextChange(e)}
-          multiline={true}
-           />
+        <Divider />
+        <div className={"input-area"}>
+          <InputForm
+            name={"name"}
+            label="名前"
+            value={state.name}
+            onTextChange={e => onTextChange(e)}
+            />
+          <InputForm
+            name={"message"}
+            label="メッセージ内容" 
+            value={state.message}
+            onTextChange={e => onTextChange(e)}
+            multiline={true}
+            />
+          <SendButton onClick={onMessageSubmit} />
+        </div>
       </Dialog>
     </div>
   );

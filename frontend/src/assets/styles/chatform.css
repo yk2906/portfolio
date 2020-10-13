@@ -1,0 +1,38 @@
+.render-chat {
+
+  max-width: 500px;
+  border-radius: 5px;
+  /* box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75); */
+  margin: auto;
+  border: 1px solid;
+  height: 600px;
+  width: 100%; 
+  box-sizing: border-box;
+  font-size: 18px;
+  display: flex;
+  flex-flow: column;
+  overflow: scroll;
+}
+
+.inside-chatform {
+  margin: .2rem;
+  padding: .1rem;
+}
+
+.chatbox {
+  /* margin: .2rem; */
+  padding: .1rem;
+  background-color: skyblue;
+  border-radius: 6px;
+  width: auto;
+  flex-wrap: wrap;
+}
+
+.name-box {
+  font-size: 15px;
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+}
