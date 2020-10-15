@@ -10,6 +10,7 @@ import Profile from './Profile';
 import Hobby from './Hobby';
 import Aim from './Aim';
 import Career from './Career';
+import GithubUrl from './GithubUrl';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,12 +48,12 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.lemonchiffon,
     display: 'flex',
-    height: 234,
+    height: 280,
     padding: 50,
     minWidth: 1000,
-    backgroundColor: 'lemonchiffon'
+    // backgroundColor: ''
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -84,7 +85,7 @@ export default function VerticalTabs() {
         <Tab label="スキル・資格" {...a11yProps(2)} />
         <Tab label="趣味" {...a11yProps(3)} />
         <Tab label="目標" {...a11yProps(4)} />
-        {/* <Tab label="お問い合わせ" {...a11yProps(5)} /> */}
+        <Tab label="GitHub" {...a11yProps(5)} />
         {/* <Tab label="Item Seven" {...a11yProps(6)} /> */}
       </Tabs>
       <TabPanel value={value} index={0} style={{margin:'0 auto'}}>
@@ -103,10 +104,10 @@ export default function VerticalTabs() {
         <Aim />
       </TabPanel>
       <TabPanel value={value} index={5} style={{margin:'0 auto'}}>
+        <GithubUrl />
       </TabPanel>
-      {/* <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel> */}
+      <TabPanel value={value} index={6} style={{margin:'0 auto'}}>
+      </TabPanel>
     </div>
   );
 }

@@ -12,7 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
-import AlignItemList from './AlignItemList';
+// import AlignItemList from './AlignItemList';
 import InputForm from './InputForm';
 import SendButton from './SendButton';
 import socketio from 'socket.io-client'
@@ -20,8 +20,8 @@ import { useState } from 'react';
 // import { useCallback } from 'react';
 import { useEffect } from 'react';
 import '../../assets/styles/chatform.css'
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
+// import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+// import Avatar from '@material-ui/core/Avatar';
 
 const socket = socketio.connect('http://localhost:4000')
 socket.on('connection', () => {

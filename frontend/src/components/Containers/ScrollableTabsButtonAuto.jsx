@@ -11,6 +11,7 @@ import Profile from './Profile';
 import Hobby from './Hobby';
 import Aim from './Aim';
 import Career from './Career';
+import GithubUrl from './GithubUrl';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -78,8 +79,8 @@ export default function ScrollableTabsButtonAuto() {
           <Tab label="スキル・資格" {...a11yProps(2)} />
           <Tab label="趣味" {...a11yProps(3)} />
           <Tab label="目標" {...a11yProps(4)} />
-          {/* <Tab label="Item Six" {...a11yProps(5)} />
-          <Tab label="Item Seven" {...a11yProps(6)} /> */}
+          <Tab label="GitHub" {...a11yProps(5)} />
+          {/* <Tab label="Item Seven" {...a11yProps(6)} /> */}
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0} style={{margin:'0 auto'}}>
@@ -97,10 +98,10 @@ export default function ScrollableTabsButtonAuto() {
       <TabPanel value={value} index={4} style={{margin:'0 auto'}}>
         <Aim />
       </TabPanel>
-      {/* <TabPanel value={value} index={5}>
-        Item Six
+      <TabPanel value={value} index={5} style={{margin:'0 auto'}}>
+        <GithubUrl />
       </TabPanel>
-      <TabPanel value={value} index={6}>
+      {/* <TabPanel value={value} index={6}>
         Item Seven
       </TabPanel> */}
     </div>
